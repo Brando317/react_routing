@@ -4,7 +4,7 @@ function Locations() {
 
     let [list, setList] = useState([]);
     useEffect(()=>{
-        fetch("https://ghibliapi.herokuapp.com/films") .then(res => res.json()) .then(data => setList(data));
+        fetch("https://ghibliapi.herokuapp.com/locations") .then(res => res.json()) .then(data => setList(data));
         
     }        
      , []      
@@ -12,7 +12,7 @@ function Locations() {
     
     return (
 <ul> 
-{ list.map((locations) => <li key={locations.id}> { locations.title} </li>)}
+{ list.map((locations) => <li key={locations.id}> { locations.name} </li>)}
 </ul>
 
 

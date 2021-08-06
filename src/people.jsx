@@ -11,7 +11,7 @@ function People() {
 
     return (
     <ul>
-        {list.map((people) => <li key={people.id}> { people.title} </li>)}
+        {list.map((people) => <li key={people.id}> { people.name} </li>)}
     </ul>
         
     )

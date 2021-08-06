@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
+import { Link} from "react-router-dom";
 
 
 function Films() {
 
     let [list, setList] = useState([]);
+
     useEffect(()=>{
 fetch("https://ghibliapi.herokuapp.com/films") .then(res => res.json()) .then(data => setList(data));
 
@@ -16,7 +18,7 @@ fetch("https://ghibliapi.herokuapp.com/films") .then(res => res.json()) .then(da
 
     return (
         <ul>   
-{ list.map(film => <li key={film.id}> { film.title} </li>)}
+{ list.map(film => <li key={film.id}> <Link to={"/films/"+film.id}> { film.title } </Link> </li>)}
 
         </ul>
     )
